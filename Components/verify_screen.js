@@ -8,7 +8,8 @@ import {
 import { Header } from './commmon'
 
 //phone number hardcoded for now but will also draw from state
-//read from text also.
+//Automatically grab code from text
+//automatically submit code if len=4
 
 
 const Verify = (props) => {
@@ -22,22 +23,31 @@ const Verify = (props) => {
         //handle code request here
         console.log('New verification code requested')
     }
+
     return (
     <>
-    <Header content="Verify"/>
-    <Text>
-        Enter Verification code
-    </Text>
-    <Text>
-        Please enter the verification code sent to {props.phone_number}
-    </Text>
-    <TextInput 
-        style={{backgroundColor:"grey"}}
-        multiline={false}
-        keyboardType={"number-pad"}
-        maxLength={4}
-        onChangeText={val => setVerify_code(val) }
-    />
+        <Header content="Verify"/>
+        <Text>
+            Enter Verification code
+        </Text>
+        <Text>
+            Please enter the verification code sent to {props.phone_number}
+        </Text>
+        <TextInput 
+            style={{backgroundColor:"grey"}}
+            multiline={false}
+            keyboardType={"number-pad"}
+            maxLength={4}
+            onChangeText={val => setVerify_code(val) }
+        />
+        <Button 
+            title={"Submit code"}
+        />
+        <Button
+            title={"Resend Code"}
+            onPress={() => requestCode}
+
+        />
 
     </>
     )
