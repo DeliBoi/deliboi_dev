@@ -34,7 +34,12 @@ const Verify = (props) => {
             Please enter the verification code sent to {props.phone_number}
         </Text>
         <TextInput 
+
             style={{backgroundColor:"grey", textAlign:"center"}}
+
+            style={{backgroundColor:"grey", textAlign:"center"}}
+            style={{backgroundColor:"grey"}}
+
             multiline={false}
             keyboardType={"number-pad"}
             maxLength={4}
@@ -43,11 +48,15 @@ const Verify = (props) => {
         <Button 
             title={"Submit code"}
             onPress={() => verifyHandler}
+
+            onPress={() => verifyHandler}
+
         />
         <Button
             title={"Resend Code"}
             onPress={() => requestCode}
         />
+
 
     </>
     )
