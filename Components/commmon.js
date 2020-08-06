@@ -12,6 +12,10 @@ const Header = (props) => {
             height:45,
             backgroundColor:'white',
             alignItems:'center',
+            borderColor:'black',
+            borderStyle:'dotted',
+            borderWidth:2
+
         }}>
             <Text style={{
                 fontFamily:'Cabin',
